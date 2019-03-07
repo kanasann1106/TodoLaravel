@@ -2,16 +2,19 @@
 
 namespace Tests\Feature;
 
-use App\Http\Requests\CreateTask;
-use Carbon\Carbon;
 use Tests\TestCase;
+//use App\Http\Requests\CreateTask;
+use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+
+
 
 class TaskTest extends TestCase
 {
     // テストケースごとにデータベースをリフレッシュして
     // マイグレーションを再実行する
     use RefreshDatabase;
+
 
     public function setUp()
     {
@@ -71,4 +74,5 @@ class TaskTest extends TestCase
             'status' => '状態 には 未着手、着手中、完了 のいずれかを指定してください。',
         ]);
     }
+
 }
