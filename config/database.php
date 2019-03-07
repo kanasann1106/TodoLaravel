@@ -33,6 +33,13 @@ return [
 
     'connections' => [
 
+        'mysql_testing' => [
+            'driver' => 'mysql',
+            'database' => ':memory:',
+            'prefix' => '',
+            'unix_socket' => env('DB_SOCKET', '/Applications/MAMP/tmp/mysql/mysql.sock'),
+        ],
+
         'sqlite' => [
             'driver' => 'sqlite',
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
