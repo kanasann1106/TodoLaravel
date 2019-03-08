@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//ホーム画面
+Route::get('/', 'HomeController@index')->name('home');
 
+//認証画面
+Auth::routes();
+
+//フォルダ別タスク一覧
 Route::get('/folders/{id}/tasks', 'TaskController@index')->name('tasks.index');
 
 // カテゴリ作成画面のルーティング
