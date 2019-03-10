@@ -14,9 +14,6 @@ Route::group(['middleware' => 'auth'], function(){
     //ホーム画面
     Route::get('/', 'HomeController@index')->name('home');
 
-    //認証画面
-    Auth::routes();
-
     //フォルダ別タスク一覧
     Route::get('/folders/{id}/tasks', 'TaskController@index')->name('tasks.index');
 
@@ -33,4 +30,5 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/folders/{id}/tasks/{task_id}/edit', 'TaskController@edit');
 });
 
-Auth::rotes();
+//認証画面
+Auth::routes();
